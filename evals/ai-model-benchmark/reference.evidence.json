@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "primary-claim",
+      "quote": "该样例在 arm64 模拟器上记录了解码调用耗时 1200 ms。",
+      "level": "simulation",
+      "reasoning": "两秒静音样例的解码计时不包括录音、加载或 UI；不说明准确率或真机性能。",
+      "evidence": [
+        {
+          "path": "results.json",
+          "excerpt": "\"inference_ms\":1200",
+          "sha256": "392b91ecf58ddc7cd41ea39652e560908db3cbc51bf96686af178291f3068394"
+        }
+      ]
+    }
+  ]
+}

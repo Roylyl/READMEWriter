@@ -1,0 +1,17 @@
+{
+  "id": "cli-tool",
+  "profile": "cli",
+  "baseline_expected_codes": [
+    "placeholder",
+    "missing-image",
+    "invalid-anchor"
+  ],
+  "required_claim_ids": [
+    "primary-claim"
+  ],
+  "rubric": [
+    "使用本地安装而非假定包已发布",
+    "命令名称和位置参数与解析器一致",
+    "不添加不存在的参数或性能结论"
+  ]
+}

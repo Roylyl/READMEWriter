@@ -1,4 +1,4 @@
 interface:
   display_name: "READMEWriter"
-  short_description: "正式化项目 README，统一品牌图标、徽章、导航、安装说明与事实依据"
-  default_prompt: "使用 $readme-writer 检查当前项目并编写正式、准确、包含适当图标与徽章的 README。"
+  short_description: "基于仓库证据编写 README，分类项目、追踪声明并校验链接与证据"
+  default_prompt: "使用 $readme-writer 检查项目类型与仓库证据，编写 README，并运行 lint 与声明一致性检查。"

@@ -1,0 +1,17 @@
+{
+  "id": "browser-extension",
+  "profile": "browser-extension",
+  "baseline_expected_codes": [
+    "placeholder",
+    "missing-image",
+    "invalid-anchor"
+  ],
+  "required_claim_ids": [
+    "primary-claim"
+  ],
+  "rubric": [
+    "安装根目录与 manifest 对应",
+    "无依据时不加 npm 构建",
+    "明确外发文本，不承诺离线或浏览器通用"
+  ]
+}

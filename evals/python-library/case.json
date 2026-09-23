@@ -1,0 +1,17 @@
+{
+  "id": "python-library",
+  "profile": "library-sdk",
+  "baseline_expected_codes": [
+    "placeholder",
+    "missing-image",
+    "invalid-anchor"
+  ],
+  "required_claim_ids": [
+    "primary-claim"
+  ],
+  "rubric": [
+    "示例使用真实导出函数",
+    "区分 Python 最低要求与测试环境",
+    "不声称广泛数值精度或性能保证"
+  ]
+}

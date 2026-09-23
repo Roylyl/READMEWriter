@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "primary-claim",
+      "quote": "项目最低部署目标配置为 iOS 26.0。",
+      "level": "configuration",
+      "reasoning": "只存在部署配置与模拟器记录，不可扩大为真机兼容承诺。",
+      "evidence": [
+        {
+          "path": "PocketNotes.xcodeproj/project.pbxproj",
+          "excerpt": "IPHONEOS_DEPLOYMENT_TARGET = 26.0;",
+          "sha256": "6c311faf302b95e39ddeb440437538d4d838470fc1bdea0026cdb2a37330ec43"
+        }
+      ]
+    }
+  ]
+}

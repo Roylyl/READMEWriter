@@ -1,0 +1,3 @@
+// Evaluation fixture; not a complete Xcode project.
+IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+SDKROOT = iphoneos;

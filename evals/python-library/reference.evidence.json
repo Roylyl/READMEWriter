@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "primary-claim",
+      "quote": "现有测试记录仅覆盖 Python 3.11 下的零摄氏度转换。",
+      "level": "simulation",
+      "reasoning": "单一函数用例只证明该条件，不能扩展为全运行时测试。",
+      "evidence": [
+        {
+          "path": "test-results.txt",
+          "excerpt": "Python 3.11: celsius_to_fahrenheit(0) == 32 PASS",
+          "sha256": "11595e2b782d70b0ee516c395ab5da899b38ae3909b71d65d3f1487149a45ab9"
+        }
+      ]
+    }
+  ]
+}

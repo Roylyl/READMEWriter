@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "primary-claim",
+      "quote": "记录显示 ESP-IDF v5.3 下 ESP32-S3 目标构建通过。",
+      "level": "build",
+      "reasoning": "编译记录不证明 GPIO 接线正确、烧录成功或真实灯闪烁。",
+      "evidence": [
+        {
+          "path": "build-record.txt",
+          "excerpt": "ESP-IDF v5.3, target esp32s3: build PASS",
+          "sha256": "b29d77f7601b97d8eb6aa2921a91584f701fff4540267a3b79f3860f8e3ba62e"
+        }
+      ]
+    }
+  ]
+}

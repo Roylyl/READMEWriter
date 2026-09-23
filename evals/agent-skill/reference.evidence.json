@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "primary-claim",
+      "quote": "技能输出包括观察到的行为、预期行为与复现步骤。",
+      "level": "implementation",
+      "reasoning": "这是技能指令要求，不是实际 Agent 评估结果。",
+      "evidence": [
+        {
+          "path": "references/format.md",
+          "excerpt": "Include observed behavior, expected behavior and reproduction steps.",
+          "sha256": "965cfb6039cb55ca6f2588f8cf88f5d2546b418dbd460970c775b8af51a9499a"
+        }
+      ]
+    }
+  ]
+}

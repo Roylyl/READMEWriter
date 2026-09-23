@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "primary-claim",
+      "quote": "项目元数据要求 Python 3.10 及以上。",
+      "level": "configuration",
+      "reasoning": "清单声明运行时下限，不证明全部 Python 版本已测试。",
+      "evidence": [
+        {
+          "path": "pyproject.toml",
+          "excerpt": "requires-python = \">=3.10\"",
+          "sha256": "26ad12fc62c348ce199a7ec70230a11177219f3b2a87a3bccc7504b84380148c"
+        }
+      ]
+    }
+  ]
+}

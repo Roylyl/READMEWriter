@@ -1,0 +1,17 @@
+{
+  "id": "ai-model-benchmark",
+  "profile": "model-benchmark",
+  "baseline_expected_codes": [
+    "placeholder",
+    "missing-image",
+    "invalid-anchor"
+  ],
+  "required_claim_ids": [
+    "primary-claim"
+  ],
+  "rubric": [
+    "模型大小不写成内存占用",
+    "说明输入、环境和计时边界",
+    "静音成功不等于识别准确或真机性能"
+  ]
+}

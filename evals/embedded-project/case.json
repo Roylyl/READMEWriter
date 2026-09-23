@@ -1,0 +1,17 @@
+{
+  "id": "embedded-project",
+  "profile": "embedded-firmware",
+  "baseline_expected_codes": [
+    "placeholder",
+    "missing-image",
+    "invalid-anchor"
+  ],
+  "required_claim_ids": [
+    "primary-claim"
+  ],
+  "rubric": [
+    "区分芯片目标与具体开发板",
+    "编译通过不等于烧录或硬件成功",
+    "资料缺失时不编造供电与引脚连接"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "ios-app",
+  "profile": "mobile-app",
+  "baseline_expected_codes": [
+    "placeholder",
+    "missing-image",
+    "invalid-anchor"
+  ],
+  "required_claim_ids": [
+    "primary-claim"
+  ],
+  "rubric": [
+    "不将最低部署目标说成完整 iOS 26 兼容验证",
+    "区分模拟器导航与真机测试",
+    "不编造 App Store 或 Release 下载链接"
+  ]
+}

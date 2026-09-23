@@ -1,0 +1,3 @@
+ESP-IDF v5.3, target esp32s3: build PASS
+Flash: NOT RUN
+Hardware: NOT TESTED

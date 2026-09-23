@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "primary-claim",
+      "quote": "扩展清单使用 Manifest V3。",
+      "level": "configuration",
+      "reasoning": "清单版本不是跨浏览器兼容测试。网络请求实现表明不应声称完全离线。",
+      "evidence": [
+        {
+          "path": "manifest.json",
+          "excerpt": "\"manifest_version\":3",
+          "sha256": "00de364c413ca61e966bf07a14fa751ee14ec27b1ba9a68d206bdea99f89abf2"
+        }
+      ]
+    }
+  ]
+}

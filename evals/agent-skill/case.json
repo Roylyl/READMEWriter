@@ -1,0 +1,17 @@
+{
+  "id": "agent-skill",
+  "profile": "agent-skill",
+  "baseline_expected_codes": [
+    "placeholder",
+    "missing-image",
+    "invalid-anchor"
+  ],
+  "required_claim_ids": [
+    "primary-claim"
+  ],
+  "rubric": [
+    "复制完整参考资源",
+    "调用名与 frontmatter 一致",
+    "不把技能要求说成实测效果，也不补造许可证"
+  ]
+}

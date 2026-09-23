@@ -1,0 +1,1 @@
+{"environment":"arm64 simulator","input":"2 seconds silence","inference_ms":1200,"metric":"decode call only","accuracy_evaluated":false}

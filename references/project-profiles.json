@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "profiles": [
+    {
+      "id": "mobile-app",
+      "name": "Mobile App",
+      "required_sections": [
+        "平台与安装",
+        "核心流程",
+        "设备验证状态"
+      ],
+      "recommended_sections": [
+        "截图",
+        "权限",
+        "签名与构建"
+      ],
+      "forbidden_assumptions": [
+        "最低部署版本等于全版本验证",
+        "模拟器通过等于真机通过"
+      ],
+      "verification_targets": [
+        "部署目标",
+        "SDK",
+        "设备与模拟器记录",
+        "实际发行附件"
+      ]
+    },
+    {
+      "id": "desktop-app",
+      "name": "Desktop App",
+      "required_sections": [
+        "系统与架构",
+        "安装启动与退出",
+        "验证范围"
+      ],
+      "recommended_sections": [
+        "权限",
+        "签名",
+        "更新与卸载"
+      ],
+      "forbidden_assumptions": [
+        "可编译等于已签名公证",
+        "单架构等于全架构"
+      ],
+      "verification_targets": [
+        "平台配置",
+        "打包脚本",
+        "签名记录",
+        "运行记录"
+      ]
+    },
+    {
+      "id": "browser-extension",
+      "name": "Browser Extension",
+      "required_sections": [
+        "浏览器与扩展规范",
+        "加载步骤",
+        "权限与数据去向"
+      ],
+      "recommended_sections": [
+        "配置",
+        "截图",
+        "开发与测试"
+      ],
+      "forbidden_assumptions": [
+        "Manifest V3 等于所有浏览器兼容",
+        "源码目录需要 npm 构建"
+      ],
+      "verification_targets": [
+        "manifest",
+        "background/content 入口",
+        "host_permissions",
+        "真实加载记录"
+      ]
+    },
+    {
+      "id": "cli",
+      "name": "CLI",
+      "required_sections": [
+        "安装前提",
+        "最小命令与输出",
+        "参数或帮助入口"
+      ],
+      "recommended_sections": [
+        "配置",
+        "退出码",
+        "管道示例"
+      ],
+      "forbidden_assumptions": [
+        "帮助文本等于参数已实现",
+        "包名等于包已发布"
+      ],
+      "verification_targets": [
+        "命令解析器",
+        "入口注册",
+        "包清单",
+        "命令测试"
+      ]
+    },
+    {
+      "id": "library-sdk",
+      "name": "Library / SDK",
+      "required_sections": [
+        "运行时要求",
+        "依赖安装",
+        "最小调用",
+        "API 入口"
+      ],
+      "recommended_sections": [
+        "错误处理",
+        "兼容矩阵",
+        "开发测试"
+      ],
+      "forbidden_assumptions": [
+        "源码接口存在等于公开稳定 API",
+        "单次测试覆盖全部运行时"
+      ],
+      "verification_targets": [
+        "包元数据",
+        "导出接口",
+        "测试环境",
+        "发布记录"
+      ]
+    },
+    {
+      "id": "embedded-firmware",
+      "name": "Embedded Firmware",
+      "required_sections": [
+        "芯片与板型",
+        "工具链",
+        "构建烧录",
+        "验证状态"
+      ],
+      "recommended_sections": [
+        "引脚表",
+        "串口",
+        "恢复与升级"
+      ],
+      "forbidden_assumptions": [
+        "编译成功等于可烧录",
+        "芯片家族等于任意开发板支持"
+      ],
+      "verification_targets": [
+        "sdkconfig",
+        "板级定义",
+        "分区表",
+        "串口与实机日志"
+      ]
+    },
+    {
+      "id": "hardware-project",
+      "name": "Hardware Project",
+      "required_sections": [
+        "硬件版本",
+        "原理图与 BOM 入口",
+        "供电及接口",
+        "原型状态"
+      ],
+      "recommended_sections": [
+        "装配",
+        "测量条件",
+        "设计文件格式"
+      ],
+      "forbidden_assumptions": [
+        "仿真等于量产",
+        "BOM 存在等于已装配",
+        "估算等于实测"
+      ],
+      "verification_targets": [
+        "原理图版本",
+        "BOM",
+        "网表",
+        "测量与装配记录"
+      ]
+    },
+    {
+      "id": "hardware-software-system",
+      "name": "Hardware + Software System",
+      "required_sections": [
+        "系统边界",
+        "模块与链路",
+        "部署顺序",
+        "端到端状态"
+      ],
+      "recommended_sections": [
+        "协议矩阵",
+        "联调",
+        "故障定位"
+      ],
+      "forbidden_assumptions": [
+        "单模块通过等于端到端通过",
+        "控制链路等于数据链路"
+      ],
+      "verification_targets": [
+        "客户端和固件协议",
+        "版本清单",
+        "多端联调记录"
+      ]
+    },
+    {
+      "id": "ai-application",
+      "name": "AI Application",
+      "required_sections": [
+        "模型或供应商",
+        "运行配置",
+        "数据去向",
+        "费用边界"
+      ],
+      "recommended_sections": [
+        "示例",
+        "缓存",
+        "错误处理",
+        "模型选择"
+      ],
+      "forbidden_assumptions": [
+        "兼容 API 等于模型可用",
+        "本地界面等于本地推理"
+      ],
+      "verification_targets": [
+        "请求路径",
+        "配置",
+        "运行依赖",
+        "实际调用记录"
+      ]
+    },
+    {
+      "id": "model-benchmark",
+      "name": "Model Benchmark",
+      "required_sections": [
+        "模型矩阵",
+        "输入与环境",
+        "指标口径",
+        "复现与验证范围"
+      ],
+      "recommended_sections": [
+        "原始结果",
+        "资源体积",
+        "限制",
+        "许可"
+      ],
+      "forbidden_assumptions": [
+        "模型文件大小等于内存",
+        "推理完成等于准确",
+        "模拟器耗时等于设备性能"
+      ],
+      "verification_targets": [
+        "模型 revision",
+        "数据版本",
+        "计时起止点",
+        "原始结果",
+        "硬件记录"
+      ]
+    },
+    {
+      "id": "dataset",
+      "name": "Dataset",
+      "required_sections": [
+        "来源与采集范围",
+        "结构",
+        "获取",
+        "使用许可与限制"
+      ],
+      "recommended_sections": [
+        "划分",
+        "标注",
+        "质量",
+        "版本与引用"
+      ],
+      "forbidden_assumptions": [
+        "可下载等于可再分发",
+        "样本数等于唯一记录",
+        "无标签等于无偏差"
+      ],
+      "verification_targets": [
+        "数据清单",
+        "校验和",
+        "字段样例",
+        "来源与许可",
+        "划分脚本"
+      ]
+    },
+    {
+      "id": "agent-skill",
+      "name": "Agent Skill",
+      "required_sections": [
+        "适用任务",
+        "安装",
+        "调用",
+        "输出与范围",
+        "许可"
+      ],
+      "recommended_sections": [
+        "参考路由",
+        "校验",
+        "evals",
+        "生成内容许可"
+      ],
+      "forbidden_assumptions": [
+        "装入目录等于已加载",
+        "lint 通过等于 Agent 效果已验证"
+      ],
+      "verification_targets": [
+        "SKILL frontmatter",
+        "资源路径",
+        "脚本",
+        "真实或参考评估记录"
+      ]
+    },
+    {
+      "id": "web-app",
+      "name": "Web App",
+      "required_sections": [
+        "运行依赖",
+        "本地启动",
+        "配置",
+        "服务与部署边界"
+      ],
+      "recommended_sections": [
+        "截图",
+        "数据库",
+        "测试",
+        "运维入口"
+      ],
+      "forbidden_assumptions": [
+        "开发服务器等于生产部署",
+        "前端测试等于后端安全"
+      ],
+      "verification_targets": [
+        "package scripts",
+        "环境模板",
+        "路由",
+        "服务配置",
+        "部署记录"
+      ]
+    },
+    {
+      "id": "static-web-project",
+      "name": "Static Web Project",
+      "required_sections": [
+        "页面范围",
+        "预览",
+        "资源与发布方式"
+      ],
+      "recommended_sections": [
+        "浏览器行为",
+        "外部请求",
+        "维护入口"
+      ],
+      "forbidden_assumptions": [
+        "静态网站必须 npm",
+        "缓存等于离线能力",
+        "源码存在等于已部署"
+      ],
+      "verification_targets": [
+        "HTML/CSS/JS 入口",
+        "预览脚本",
+        "第三方资源",
+        "部署配置"
+      ]
+    },
+    {
+      "id": "research-prototype",
+      "name": "Research Prototype",
+      "required_sections": [
+        "研究问题",
+        "原型范围",
+        "复现实验",
+        "证据与限制"
+      ],
+      "recommended_sections": [
+        "方法",
+        "实验设计",
+        "数据",
+        "后续问题"
+      ],
+      "forbidden_assumptions": [
+        "概念演示等于产品",
+        "一次实验等于可泛化结论"
+      ],
+      "verification_targets": [
+        "实验配置",
+        "原始记录",
+        "数据来源",
+        "代码与报告对应关系"
+      ]
+    }
+  ]
+}
