@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">READMEWriter</title>
+  <desc id="desc">深蓝色圆角背景上的白色文档和青绿色书写笔</desc>
+  <rect width="128" height="128" rx="28" fill="#142C47"/>
+  <path d="M34 24h41l19 19v57a5 5 0 0 1-5 5H34a5 5 0 0 1-5-5V29a5 5 0 0 1 5-5Z" fill="#F8FAFC"/>
+  <path d="M75 24v19h19" fill="#CBD5E1"/>
+  <path d="M43 53h28M43 65h21M43 77h13" fill="none" stroke="#142C47" stroke-width="6" stroke-linecap="round"/>
+  <path d="m63 91 5-18 29-29a5 5 0 0 1 7 0l6 6a5 5 0 0 1 0 7L81 86Z" fill="#28B7A0" stroke="#142C47" stroke-width="3" stroke-linejoin="round"/>
+  <path d="m94 47 13 13M68 73l13 13" stroke="#142C47" stroke-width="3"/>
+</svg>
