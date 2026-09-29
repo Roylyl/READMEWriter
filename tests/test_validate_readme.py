@@ -30,6 +30,22 @@ class LintTests(unittest.TestCase):
     def codes(self, *args, **kwargs):
         return {x['code'] for x in self.check(*args, **kwargs)}
 
+    def test_strong_punctuation_boundary(self):
+        for body in ['**中文界面：**首页', '**已完成。**后续', '**Note:**next']:
+            with self.subTest(body=body):
+                findings = self.check('# App\n' + body)
+                self.assertEqual([x['code'] for x in findings], ['strong-punctuation-boundary'])
+                self.assertEqual(findings[0]['line'], 2)
+
+    def test_strong_valid_boundaries_and_literal_examples(self):
+        for body in ['**中文界面**：首页', '**已完成**。后续', '**Note:** next',
+                     '**完成。**', '**完成。**（后续）', '`**界面：**首页`',
+                     '```md\n**界面：**首页\n```', '    **界面：**首页',
+                     r'\*\*界面：\*\*首页', '<!-- **界面：**首页 -->',
+                     '<span title="**界面：**首页">示例</span>']:
+            with self.subTest(body=body):
+                self.assertNotIn('strong-punctuation-boundary', self.codes('# App\n' + body))
+
     def test_missing_files_and_images(self):
         self.assertEqual(self.codes('# App\n[x](none.md)\n![x](none.png)'), {'missing-file', 'missing-image'})
 

@@ -207,3 +207,7 @@ READMEWriter/
 技能指令、规范、脚本与评估文件采用 [GPL-3.0-only](LICENSE)。Copyright © 2026 Roylyl。第三方内容保留原有权利与许可。
 
 **我们不要求用户仅因使用本技能，就将其项目或生成、改写的README改为GPL。** 输出依据其实际内容和用户项目的授权安排处理；若实质复制技能包或第三方受保护内容，仍需遵循相应许可。详见 [Output licensing policy](OUTPUT-LICENSING.md)。
+
+### 必做的渲染验证
+
+每次创建或修改README后，技能要求使用CommonMark/GFM渲染器检查实际解析结果，不能只依赖lint。具备预览工具时同时检查首屏和窄屏；无法运行渲染器时必须明确报告验证未完成。HTML解析验证与浏览器视觉验证分别说明。

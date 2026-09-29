@@ -26,6 +26,7 @@ python3 scripts/validate_readme.py README.md --root . --evidence evidence.json
 | invalid-anchor | 本页或本地 Markdown 标题锚点、HTML id/name 不存在 |
 | duplicate-h1 / missing-h1 | 多个一级标题为错误；缺少一级标题为警告 |
 | undefined-reference | 完整或折叠引用式链接缺少定义 |
+| strong-punctuation-boundary | 加粗结束标记前为标点、后紧接文字，可能导致星号外露；将末尾标点移出加粗范围 |
 | placeholder | 未替换的双花括号变量、常见待办标记或模板变量 |
 | local-absolute-path | 常见本机目录、Windows 盘符/UNC 或 file URL 泄漏 |
 | badge-repo-mismatch | GitHub Shields 徽章的 owner/repo 与期望仓库不一致 |
@@ -44,3 +45,5 @@ python3 scripts/validate_readme.py README.md --root . --evidence evidence.json
 这是面向常见 GitHub README 的轻量解析器，不是完整 CommonMark/GFM 引擎。复杂转义、扩展 Markdown、模板语法、跨行 HTML 代码块、含逗号的 srcset 数据 URL 等需人工复核；锚点算法在罕见 Unicode 或复杂内联 HTML 下可能与 GitHub 不同。不会验证 HTTP 链接可用性、远端锚点、徽章数值/查询参数有效性、图片像素内容，也不会判断目录树或普通反引号文本是否真的是文件引用。
 
 本机路径检测只覆盖文档中列出的常见模式，不能代替密钥或隐私扫描。lint 通过不能证明 README 中的功能与测试结论真实；继续按 [证据规范](evidence-guide.md) 评审声明。
+
+强调检查仅覆盖成对`**`的上述常见边界问题，不是完整Markdown解析器；嵌套强调、转义、HTML与复杂块结构仍需实际渲染核对。

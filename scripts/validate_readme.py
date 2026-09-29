@@ -236,6 +236,19 @@ def lint(readme, root=None, expected_repo=None, allowed_repos=(), evidence=None)
     except (OSError, UnicodeError) as exc:
         return [{'code': 'read-error', 'severity': 'error', 'line': 1, 'message': str(exc)}]
     clean, elements, headings, anchors = document_info(text)
+    # Narrow check for paired strong markers ending with punctuation immediately
+    # before a letter/number. Such a closing run is not right-flanking in CommonMark.
+    emphasis_text = mask_inline(clean)
+    emphasis_text = re.sub(r'<[^>]*>', lambda m: ' ' * len(m[0]), emphasis_text)
+    for m in re.finditer(r'(?<![\\*])\*\*(?!\*)([^*\n]+?)(?<!\\)\*\*(?!\*)', emphasis_text):
+        body = m[1]
+        following = emphasis_text[m.end():m.end()+1]
+        if (body and not body[0].isspace()
+                and unicodedata.category(body[-1]).startswith('P')
+                and following and unicodedata.category(following)[0] in 'LMN'):
+            add('strong-punctuation-boundary',
+                'Strong closing marker follows punctuation and precedes text; '
+                'move trailing punctuation outside ** (for example **名称**：说明).', m.start())
     h1s = [h for h in headings if h[0] == 1]
     if len(h1s) > 1: add('duplicate-h1', 'More than one H1 heading.', h1s[1][2])
     if not h1s: add('missing-h1', 'No H1 heading found.', severity='warning')
