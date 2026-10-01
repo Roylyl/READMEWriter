@@ -1,4 +1,4 @@
 interface:
   display_name: "READMEWriter"
-  short_description: "基于仓库证据编写 README，分类项目、追踪声明并校验链接与证据"
-  default_prompt: "使用 $readme-writer 检查项目类型与仓库证据，编写 README，并运行 lint 与声明一致性检查。"
+  short_description: "以项目定位、功能和使用方式为主编写README，完善适用徽标与展示"
+  default_prompt: "使用技能$readme-writer，基于仓库事实编写README，重点介绍项目用途、功能与上手方式，完善适用徽标，不主动描述设备验证经历。"

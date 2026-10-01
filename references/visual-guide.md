@@ -10,7 +10,14 @@
 
 ## 徽章选择
 
-通常选择 3–6 个对读者有用的状态，复杂项目按需增加；统一 `flat` 或 `flat-square`，本技能默认 `flat-square`。颜色使用项目主色与少量中性色；警示色只表达真实状态。避免彩虹式技术栈、重复统计和无意义口号。
+徽标要完整覆盖项目适用的信息，每次新建或整体优化README都检查身份与版本、许可、平台与运行要求、分发入口、维护与协作几个维度；满足依据且对读者有用的应补齐，不只放一两个装饰性徽标。通常先按3–6个组织，项目需要时可增加或分两行，信息少时不凑数量。统一使用`flat`或`flat-square`，本技能默认`flat-square`。颜色使用项目主色与少量中性色，避免彩虹式技术栈、重复统计和无意义口号。
+
+- 基础信息：项目级许可文件存在时添加License；具有明确版本时选择Release、包版本或本地Version，避免相同版本重复展示；平台与运行时要求来自配置。
+- 分发信息：有真实发行渠道时添加对应版本或分发徽标；Downloads仅在确有附件或包统计且对读者有意义时添加。
+- 维护与协作：已配置工作流时添加Build/Checks；公开GitHub项目按实际需要补充Stars、Issues或Last Commit。无需为徽标新建工作流或虚构发布渠道。
+- 按项目选择：应用侧重版本、平台、许可和下载；库/CLI侧重包版本、运行时、许可和CI；技能侧重类型、许可、适用工具或运行时，以及仓库协作信息。只展示核心技术，不罗列全部依赖。
+- 每个徽标都应有清晰标签、可读的`alt`和对应点击入口。平台徽标链接到运行要求，版本链接到发行页或版本文件，许可链接到许可文件，CI链接到工作流，协作徽标链接到相应页面。
+- 不添加“某设备验证通过”“真机测试通过”等徽标。CI徽标可以反映现有工作流状态，但不替代项目功能介绍或暗示设备兼容性。
 
 | 徽章 | 添加依据 | 点击目的地 |
 | --- | --- | --- |
@@ -18,7 +25,9 @@
 | Version | 已核实本地版本清单，可与 Release 状态不同 | 版本源文件 |
 | Build / Checks | 已存在相应工作流及正确文件名、分支 | 对应 Actions 工作流 |
 | Downloads | 确有发行附件且该指标对使用者有意义 | Releases；指附件累计下载，不是克隆或源码 ZIP |
-| Platform / Runtime | 配置或验证记录支持该范围 | 环境要求或兼容说明 |
+| Package Version | 包清单与真实包分发渠道一致 | 对应包页面 |
+| Platform / Runtime | 当前配置明确相应运行要求 | 运行要求章节 |
+| Type / Core Technology | 项目类型或核心技术有实际依据 | 项目介绍或开发说明 |
 | License | 存在适用的项目级许可文件 | 该文件 |
 | Stars / Issues / Last Commit | 仓库标识已核实 | 对应仓库页面；Issues 需可用 |
 | Forks / Repo Size | 对协作或获取体积有实际参考价值 | 对应仓库页面；通常低优先级 |
@@ -27,7 +36,7 @@
 
 ## 居中头部片段
 
-下方是排版模板，`{{...}}` 必须在使用时替换或删除，不可原样交付。无 logo、许可或版本时移除对应元素。
+下方是排版模板，`{{...}}`必须在使用时替换或删除，不可原样交付。无logo、许可或版本时移除对应元素，运行要求与Stars也仅在适用且存在对应入口时保留；按项目补充真实发行渠道或CI徽标。
 
 ```html
 <p align="center">
@@ -41,6 +50,8 @@
 <p align="center">
   <a href="{{version_file}}"><img src="https://img.shields.io/badge/version-{{encoded_version}}-2563eb?style=flat-square" alt="项目版本"></a>
   <a href="{{license_file}}"><img src="https://img.shields.io/github/license/{{owner}}/{{repo}}?style=flat-square" alt="项目许可证"></a>
+  <a href="#运行要求"><img src="https://img.shields.io/badge/platform-{{encoded_platform}}-555555?style=flat-square" alt="运行平台要求"></a>
+  <a href="https://github.com/{{owner}}/{{repo}}/stargazers"><img src="https://img.shields.io/github/stars/{{owner}}/{{repo}}?style=flat-square" alt="GitHub Stars"></a>
 </p>
 
 <p align="center">
@@ -61,7 +72,9 @@ https://img.shields.io/github/v/release/{{owner}}/{{repo}}?style=flat-square&dis
 https://img.shields.io/github/downloads/{{owner}}/{{repo}}/total?style=flat-square
 https://img.shields.io/github/actions/workflow/status/{{owner}}/{{repo}}/{{workflow}}?branch={{branch}}&style=flat-square
 https://img.shields.io/github/stars/{{owner}}/{{repo}}?style=flat-square
+https://img.shields.io/github/issues/{{owner}}/{{repo}}?style=flat-square
 https://img.shields.io/github/last-commit/{{owner}}/{{repo}}?style=flat-square
+https://img.shields.io/github/license/{{owner}}/{{repo}}?style=flat-square
 https://img.shields.io/badge/platform-{{encoded_platform}}-555555?style=flat-square
 ```
 
@@ -75,7 +88,7 @@ https://img.shields.io/badge/platform-{{encoded_platform}}-555555?style=flat-squ
 
 ### 多页面截图
 
-有多张真实截图时，可用两至三列 HTML 表格组成紧凑画廊，每张图设置 `alt`、相近显示宽度与简短图注；多行展示需检查窄屏表现，拥挤时减少列数。画廊后说明截图环境与生成方式。截图只能证明展示内容，不能证明性能或实机兼容性。
+有多张真实截图时，可用两至三列HTML表格组成紧凑画廊，每张图设置`alt`、相近显示宽度与简短图注；多行展示需检查窄屏表现，拥挤时减少列数。图注以界面和功能为主，必要时注明影响理解的版本或平台，不附带设备验证经历。截图不能证明性能或实机兼容性。
 
 ```html
 <table>
