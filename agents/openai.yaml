@@ -1,4 +1,4 @@
 interface:
   display_name: "READMEWriter"
-  short_description: "以项目定位、功能和使用方式为主编写README，完善适用徽标与展示"
-  default_prompt: "使用技能$readme-writer，基于仓库事实编写README，重点介绍项目用途、功能与上手方式，完善适用徽标，不主动描述设备验证经历。"
+  short_description: "重点介绍项目用途、主要功能与快速入门，完善README徽标和展示"
+  default_prompt: "使用技能$readme-writer，编写以项目介绍和快速入门为主的README，完善适用徽标，不提及测试或设备验证，不添加审计式说明。"

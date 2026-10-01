@@ -2,7 +2,7 @@
 
 先从文件与入口判断主类型，再按需要叠加次类型。例如桌面 AI 客户端使用 Desktop App + AI Application；不因为目录名包含 app 就认定产品已经可用。
 
-[机器可读分类表](project-profiles.json) 提供 15 类项目的四个字段。`required_sections` 表示完整重写时必须回答的信息，不强制同名标题；局部修改只检查相关部分。缺少资料时简洁说明未知或请求关键事实，不制造空章节。`recommended_sections` 按实际规模选择。`forbidden_assumptions` 是推断边界，不是禁止描述已验证的能力。`verification_targets` 指向应检查的文件或记录，不等于要求执行构建或硬件测试。
+[机器可读分类表](project-profiles.json) 提供 15 类项目的四个字段。`required_sections`是选材参考，不要求逐项回答或设置同名标题；优先项目介绍和快速入门。缺少资料时简洁说明未知或请求关键事实，不制造空章节。`recommended_sections` 按实际规模选择。`forbidden_assumptions` 是推断边界，不是禁止描述已验证的能力。`verification_targets` 指向应检查的文件或记录，不等于要求执行构建或硬件测试。
 
 分类用于安排事实核对与项目介绍，不是依据标题数量评分。所有类型均优先说明用途、主要功能和上手方式。检查目标是内部核对来源，不要求写入README；不默认添加设备验证状态或测试报告。评测与研究项目只保留解释结果所必需的实验条件。合并重复内容，优先读者的最短可用路径。
 
